@@ -10,7 +10,7 @@ const text_lang = {
     },
     es:{
       logo_text: "Harlistas Cubanos. Varadero Cuba",
-      description: "Soy diseñador gráfic y director de arte. También estoy especializado en diseño web front-end, experiencia de usuario y creación de identidades. A lo largo de mi carrera, he trabajado con empresas de todas las formas y tamaños que enriquecieron mi experiencia.",
+      description: "Soy diseñador gráfico y director de arte. También estoy especializado en diseño web front-end, experiencia de usuario y creación de identidades. A lo largo de mi carrera, he trabajado con empresas de todas las formas y tamaños que enriquecieron mi experiencia.",
       contact_title: "Contáctanos",
       contact_name: "Nombre",
       contact_email: "Email",
