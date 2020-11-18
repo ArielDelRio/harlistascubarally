@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles/contact-card.css">
     <link rel="stylesheet" href="styles/touch-indicator.css">
 
-
     <title>Harlistas de Cuba. Rally</title>
 </head>
 <body>
@@ -18,7 +17,7 @@
         <div class="toggle-button-cover">
             <div class="button-cover">
                 <div class="button b2" id="button-10">
-                    <input type="checkbox" class="checkbox">
+                    <input type="checkbox" class="checkbox" id='cbox_change_lang' value ='en'>
                     <div class="knobs">
                         <span class="english"><img src="images/english_language.svg.png" style="width: 33px;" alt="english_lang_flag"></span>
                     </div>
@@ -34,8 +33,8 @@
     <div class="container">
         <div class="front">
           <img class="logo" src="./images/logo.png" alt="Logo" width="300px">
-          <h1 class="logo-text">Harlistas Cubanos. Varadero Cuba</h1>
-          <span class="description">I am a graphic designer and art director. I am as well specialised in front end web design, user experience and creating identities. Throughout my career, I have worked with companies of all shapes and sizes that enriched my experience.</span>
+          <h1 class="logo_text" id="logo_text">Harlistas Cubanos. Varadero Cuba</h1>
+          <span class="description" id="description">I am a graphic designer and art director. I am as well specialised in front end web design, user experience and creating identities. Throughout my career, I have worked with companies of all shapes and sizes that enriched my experience.</span>
             <!-- Touch Indicator -->
           <div class="touch-container">
             <div class="loopball"></div>
@@ -45,27 +44,68 @@
           </div>
         </div>
         <div class="back">
-          <h1 class="title">Contact Me</h1>
+          <h1 class="title" id="contact_title">Contact Me</h1>
           <div class="input-box">
             <input type="text" name="name" id="name" autocomplete="off" required>
-            <label for="name">Your name</label>
+            <label for="name" id="contact_name">Your name</label>
           </div>
           <div class="input-box">
             <input type="text" name="email" id="email" autocomplete="off" required>
-            <label for="email">Your email</label>
+            <label for="email" id="contact_email">Your email</label>
           </div>
           <div class="input-box">
             <textarea name="msg" id="msg" cols="30" rows="2" autocomplete="off" required></textarea>
-            <label for="msg">Your message</label>
+            <label for="msg" id="contact_msg">Your message</label>
           </div>
           <div class="wrapper">
-            <a href="#"><span>Send!</span></a>
+            <a href="#"><span id="contact_submit">Send!</span></a>
           </div>
           
         </div>
        
     </div>
 
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function(){
+
+        const text_lang = {
+          en: {
+            logo_text: "Harlistas Cubanos. Varadero Cuba",
+            description : "I am a graphic designer and art director. I am as well specialised in front end web design, user experience and creating identities. Throughout my career, I have worked with companies of all shapes and sizes that enriched my experience.",
+            contact_title: "Contact us",
+            contact_name: "Your name",
+            contact_email: "Your email",
+            contact_msg: "Your message",
+            contact_submit: "Send!"
+          },
+          es:{
+            logo_text: "Harlistas Cubanos. Varadero Cuba",
+            description: "Soy diseñadora gráfica y directora de arte. También estoy especializado en diseño web front-end, experiencia de usuario y creación de identidades. A lo largo de mi carrera, he trabajado con empresas de todas las formas y tamaños que enriquecieron mi experiencia.",
+            contact_title: "Contáctanos",
+            contact_name: "Nombre",
+            contact_email: "Email",
+            contact_msg: "Mensaje",
+            contact_submit: "Enviar!"
+          }
+        }
+
+
+        let cbox_change_lang = document.querySelector("#cbox_change_lang");
+
+        cbox_change_lang.addEventListener('click', ((e) =>{
+          cbox_change_lang.value = cbox_change_lang.value == 'en' ? 'es' : 'en';
+
+          Object.entries(text_lang[cbox_change_lang.value]).forEach((element)=> {
+            const [id, value] = element;
+            document.querySelector(`#${id}`).textContent = value;
+          })
+
+
+
+        }))
+      });
+    </script>
 
 </body>
 </html>
