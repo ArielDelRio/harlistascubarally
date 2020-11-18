@@ -19,7 +19,7 @@
                 <div class="button b2" id="button-10">
                     <input type="checkbox" class="checkbox" id='cbox_change_lang' value ='en'>
                     <div class="knobs">
-                        <span class="english"><img src="images/english_language.png" style="width: 33px;" alt="english_lang_flag"></span>
+                        <span class="english"><img data-aload="images/english_language.png" style="width: 33px;" alt="english_lang_flag"></span>
                     </div>
                     <div class="layer"></div>
                 </div>
@@ -32,7 +32,7 @@
     <!-- Card with rotation -->
     <div class="container">
         <div class="front">
-          <img class="logo" src="./images/logo.png" alt="Logo" width="300px">
+          <img class="logo" data-aload="./images/logo.png" alt="Logo" width="300px">
           <h1 class="logo_text" id="logo_text">Harlistas Cubanos. Varadero Cuba</h1>
           <span class="description" id="description">I am a graphic designer and art director. I am as well specialised in front end web design, user experience and creating identities. Throughout my career, I have worked with companies of all shapes and sizes that enriched my experience.</span>
             <!-- Touch Indicator -->
@@ -64,9 +64,12 @@
     </div>
 
     <script src="./text_lang.js"></script>
+<script>
+  function aload(t){"use strict";var e="data-aload";return t=t||window.document.querySelectorAll("["+e+"]"),void 0===t.length&&(t=[t]),[].forEach.call(t,function(t){t["LINK"!==t.tagName?"src":"href"]=t.getAttribute(e),t.removeAttribute(e)}),t}
+</script>
     <script>
       document.addEventListener("DOMContentLoaded", function(){
-
+aload(); 
         let cbox_change_lang = document.querySelector("#cbox_change_lang");
 
         cbox_change_lang.addEventListener('click', ((e) =>{
