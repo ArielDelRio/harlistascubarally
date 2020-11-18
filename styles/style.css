@@ -24,7 +24,7 @@ body{
     max-width: 100%;
     height: auto;
     margin-top: -20vh;
-    backface-visibility: hidden;
+    backface-visibility: hidden !important;
     -webkit-backface-visibility: hidden; /* Safari */
 }
 
