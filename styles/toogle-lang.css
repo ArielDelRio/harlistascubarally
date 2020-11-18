@@ -6,7 +6,6 @@
     position: relative;
     width: 200px;
     box-sizing: border-box;
-
 }
 
 .button-cover
@@ -92,7 +91,7 @@
 #button-10 .knobs:after
 {
     content: '';
-    background-image: url(/images/spanish_language.svg.png);
+    background-image: url(../images/spanish_language.png);
     background-repeat: no-repeat;
     background-size: 30px;
     
